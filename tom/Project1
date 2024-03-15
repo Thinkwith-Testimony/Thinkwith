@@ -1,0 +1,270 @@
+SAMPLE TICKET TO TREAT AS A TEAM SECTION 2 OF 2 
+DATE -- 11-03-2024
+TOPICS -- Bash shell scripting , Git and Github ,  Maven,NEXUS ,Tomcat , webservers - Nginx/HTTP  , SonarQube ,SonarCloud  , Jenkins , Github actions, A-DEVOPS 
+All tickets should be addressed in the order of priority based on needs. Courses that have not yet been covered will be added to this list and are advised to be addressed as they are covered by the professor.
+
+
+
+
+Ticket 01 - Bash Shell Scripting
+Task: Create a Hello World Script
+Write a simple Bash script that prints "Hello, World!" to the terminal when executed.
+Task: Calculate Sum of Numbers
+Write a Bash script that takes two numbers as input and calculates their sum.
+Task: File Management Script
+Write a Bash script that creates a new directory, moves all text files from the current directory into it, and then lists the contents of the directory.
+Task: Backup Script
+Write a Bash script that automates the backup process by creating a compressed archive of specified directories and files, and then transfers it to a remote server using SCP or SFTP.
+
+Ticket 02 - Git and GitHub:
+Task: Initialize a Local Git Repository
+Initialize a new Git repository in a local directory and add some files to it.
+Task: Commit Changes
+Make changes to the files in the repository and commit them with a descriptive message.
+Task: Push to GitHub
+Create a new repository on GitHub and push the local repository to GitHub.
+Task: Branching and Merging
+Create a new branch in the repository, make changes to the branch, merge the changes back into the main branch, and resolve any merge conflicts that arise.
+
+Ticket 03 - Maven:
+Task: Create a Maven Project
+Use Maven to create a new Java project with a simple directory structure.
+Task: Build Project with Maven
+Use Maven to compile the Java source code, run tests, and package the project into a JAR file.
+Task: Add Dependencies
+Add external dependencies to the Maven project by editing the project's pom.xml file.
+Task: Maven Lifecycle
+Understand and explain the different phases of the Maven build lifecycle (e.g., compile, test, package, install, deploy) and their significance.
+-------3B)Install Maven:
+Set up Maven for building and managing Java projects.
+Download Maven from official Apache Maven site.
+Extract the downloaded archive to your preferred installation directory.
+Add the Maven 'bin' directory to your system's PATH variable.
+Verify Maven installation using the command mvn -version.
+Adjust Maven settings to use Nexus as a repository.
+Locate the Maven settings.xml file (usually in the conf directory).
+Add a <server> section with Nexus repository details (ID, username, password).
+Test Maven by deploying and retrieving artifacts from Nexus.
+-----------3C)Task: Set up Nexus as the artifact repository manager.
+Download Nexus from the official website.
+Extract the downloaded archive to your preferred installation directory.
+Navigate to the 'bin' directory and run ./nexus run to start the Nexus service.
+Access the Nexus web interface at http://localhost:8081 and complete the initial setup.
+Task:Create a Repository in Nexus:
+Establish a new repository in Nexus for hosting Maven artifacts.
+Log in to Nexus using the default credentials (admin/admin123).
+In the Nexus dashboard, navigate to 'Repositories' and click 'Create Repository.'
+Choose the 'Maven (hosted)' type, set a Repository ID, and configure additional settings such as storage.
+
+
+Ticket 04 - Tomcat:
+Task: Install Apache Tomcat
+Download and install Apache Tomcat on your local machine.
+Task: Deploy a Web Application
+Deploy a simple web application (e.g., a Hello World servlet) to Apache Tomcat.
+Task: Access Tomcat Manager
+Access the Tomcat Manager web interface and deploy, undeploy, and manage web applications through the interface.
+Task: Configure Tomcat Security
+Configure security settings in Apache Tomcat, including user authentication, role-based access control, and SSL/TLS encryption.
+
+Ticket 05 - Web Servers (Nginx/HTTP):
+Task: Install Nginx
+Install Nginx web server on your local machine or a virtual server.
+Task: Serve Static Content
+Configure Nginx to serve static HTML files from a specified directory.
+Task: Configure Virtual Hosts
+Set up virtual hosts in Nginx to host multiple websites on a single server.
+Task: Reverse Proxy Configuration
+Configure Nginx as a reverse proxy server to forward HTTP requests to backend servers based on URL paths or domain names.
+-----5B)
+Nginx:
+A. Install Nginx:
+Set up Nginx as a reverse proxy for web applications.
+Install Nginx using the package manager (e.g., sudo apt install nginx).
+Start the Nginx service with sudo systemctl start nginx.
+Verify the installation by accessing the default Nginx page at http://localhost.
+B.  Enable SSL for secure communication.
+Obtain an SSL certificate (e.g., using Certbot/Let's Encrypt).
+Update the Nginx configuration file to include SSL settings.
+Restart Nginx with sudo systemctl restart nginx and verify the SSL setup.
+C. Ensure the Nginx configuration is valid.
+Execute the following command:
+nginx -t
+Expected result: If the configuration is valid, it should display: nginx: configuration file /etc/nginx/nginx.conf test is successful.
+------5C) HTTPS Setup:
+Task: Enable HTTPS for Website Security
+Implement HTTPS to encrypt data transmission, ensuring secure communication between users and the website.
+
+
+Ticket 06 - SonarQube:
+Task: Install SonarQube
+Download and install SonarQube on your local machine or a server.
+Task: Analyze a Project
+Analyze a sample project using SonarQube to identify code quality issues, bugs, and vulnerabilities.
+Task: Review Reports
+Review the reports generated by SonarQube to understand code quality metrics and recommendations for improvement.
+Task: Custom Quality Gates
+Configure custom quality gates in SonarQube to define project-specific quality thresholds and enforce code quality standards.
+
+Ticket 07 - SonarCloud:
+Task: Create SonarCloud Account
+Sign up for a SonarCloud account and create a new project.
+Task: Analyze GitHub Repository
+Analyze a GitHub repository using SonarCloud to detect code quality issues and security vulnerabilities.
+Task: Integrate with CI/CD Pipeline
+Integrate SonarCloud analysis into a CI/CD pipeline (e.g., using GitHub Actions or Jenkins) to automatically analyze code on each commit.
+Task: Quality Profiles and Rulesets
+Configure custom quality profiles and rulesets in SonarCloud to tailor code quality analysis to specific project requirements and coding standards.
+
+Ticket 08 - Jenkins:
+Task: Install Jenkins
+Install Jenkins on your local machine or a server.
+Task: Create a Jenkins Job
+Create a new Jenkins job to build a simple project (e.g., a Maven project) from a Git repository.
+Task: Schedule Job Execution
+Schedule the Jenkins job to run at regular intervals (e.g., daily or hourly) using cron syntax.
+Task: Pipeline as Code
+Define a Jenkins pipeline as code using the Jenkinsfile syntax to automate complex build and deployment workflows
+--8B)Install Jenkins:
+A.Install Jenkins for continuous integration.
+Download the Jenkins WAR file from official site.
+Run Jenkins using Java with the command java -jar jenkins.war.
+Access Jenkins at http://localhost:8080 and follow the setup process, obtaining the initial admin password from the Jenkins logs.
+B. Configure Jenkins to use Nexus as a repository.
+Install the 'Nexus Artifact Uploader' plugin in Jenkins.
+Configure a Jenkins job to deploy artifacts to Nexus by adding the Nexus Repository Manager details.
+C. Verify Jenkins version.
+Execute the following command:
+java -jar jenkins.war --version
+Expected result: It should display the Jenkins version.
+
+
+
+Ticket 09 - GitHub Actions:
+Task: Enable GitHub Actions
+Enable GitHub Actions for a GitHub repository.
+Task: Create Workflow File
+Create a new YAML file to define a GitHub Actions workflow for building and testing the project.
+Task: Trigger Workflow on Events
+Configure the GitHub Actions workflow to trigger on specific events (e.g., push or pull request).
+Task: Deploy to Production
+Extend the GitHub Actions workflow to automatically deploy the project to a production environment after successful build and testing.
+
+**OPTIONAL**Ticket 10 (This should be done as an individual assignment)- A-DevOps: https://aws.amazon.com/blogs/devops/use-the-aws-toolkit-for-azure-devops-to-automate-your-deployments-to-aws/
+Beginner Tasks:
+Task: Set Up Azure DevOps Account
+Sign up for an Azure DevOps account and create a new project.
+Task: Create Pipeline
+Create a new pipeline in Azure DevOps to build, test, and deploy a sample application.
+Task: Integrate with Git Repository
+Integrate Azure DevOps with a Git repository (e.g., GitHub ) to trigger pipeline execution on code changes.
+---10 B)Both AWS and Azure DevOps support version control systems for managing source code. If you've used Git repositories in AWS CodeCommit, you'll find Git repositories in Azure DevOps familiar. You can continue to collaborate on code, track changes, and manage branches effectively using Git within Azure DevOps.vWS CloudWatch offers monitoring and logging services for tracking the performance and health of AWS resources. In Azure, you can use Azure Monitor and Azure Log Analytics for similar monitoring and logging capabilities. You can monitor metrics, set up alerts, and gain insights into the operational health of your applications and infrastructure.Utilizing AWS to leveraging Azure DevOps and highlighting key areas where existing knowledge and skills can be applied. These areas include Infrastructure as Code (IaC), Continuous Integration/Continuous Deployment (CI/CD), Source Control Management, Monitoring and Logging, and Security and Compliance. This summary emphasizes the familiarity and transferability of concepts such as using ARM templates for infrastructure management, Azure Pipelines for CI/CD, Git repositories for source control, Azure Monitor for monitoring, and Azure Security Center for security and compliance. Overall,individuals with AWS experience can effectively adapt to Azure DevOps by leveraging their existing expertise in cloud computing principles and practices.
+
+~Abi Landmark Technologies
+
+
+-		PREVIOUSLY  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SAMPLE TICKETS TO TREAT AS A TEAM SECTION 1 OF 1 
+DATE : 2/12/2024
+
+Ticket 001 -- Basic File Operations
+Create a new directory called "my_documents" in your home directory.
+Create a text file named "my_notes.txt" inside "my_documents"Use the command line to move "my_notes.txt" to a subdirectory called "notes_archive" within "my_documents."
+Delete the "notes_archive" directory and all its contents using userdel command.
+
+Ticket 002 -- File Manipulation
+Create a new directory called "abi4abi", then inside it, create a .txt file using your first name . Write a sentence to the file. Use commands like cd, ls, touch, and nano or vim to perform these actions.
+
+Ticket 003 -- User Management
+Create a new user account with the username "testuser" using the useradd command.
+Set a password for the "testuser" account using the passwd command.
+Verify that you can log in as "testuser."
+Delete the "testuser" account
+
+Ticket 004-- File Permissions
+Practice hanging file permissions in Linux. Create a new file and set specific permissions for user, group, and others using the chmod command.
+
+Ticket 005-- Directory Navigation
+Practice navigating the Linux file system. Start in your home directory, then use commands like cd, ls, and pwd to move to different directories, list their contents, and display your current location.
+
+Ticket 006-- Search for Files
+Use the find command to search for specific files within a directory and its subdirectories. Experiment with different options to refine your search criteria.
+
+Ticket 007-- File Compression
+Explore file compression techniques in Linux using tools like tar and gzip. Create a compressed archive of a directory and extract its contents to a new location.
+
+Ticket 008 - Rename Files in  Directory
+Create a new directory named in your group-alias. Write a script that renames all files in a directory by adding a prefix or suffix to their names. Test it with a sample directory.
+(HERE IS A SAMPLE SCRIPT )
+
+#!/bin/bash
+
+# Define the directory path
+directory="/path/to/your/directory"
+
+# Define the prefix or suffix
+prefix="prefix_" # Change this to your desired prefix
+suffix="_suffix" # Change this to your desired suffix
+
+# Navigate to the directory
+cd "$group-alias" || exit
+
+# Rename all files in the directory
+for file in *; do
+    mv "$file" "${prefix}${file}${suffix}"
+done
+
+echo "Files renamed successfully."
+
+
+(NB: Replace "/path/to/your/directory" with the actual path to your directory. 
+Make sure to make the script executable using:
+chmod +x script_name.sh  in your command line.Then, execute the script: ./script_name.sh .This script will add the specified prefix and/or suffix to the names of all files in the specified directory.)
+
+Ticket 009-- Process Management
+Use commands like ps, top, and kill to manage processes in Linux. Practice listing running processes, monitoring resource usage, and terminating processes as needed
+
+Ticket 10-- Systemd Unit Management
+Create and manage systemd unit files to control system services, timers, and targets on your Linux system. Customize unit configurations using directives such as ExecStart, Restart, and Timeout to define service behavior and dependencies.
+
+Ticket 11-- Adding a User to Sudoers
+Edit the sudoers file to grant a user sudo privileges on your Linux system. Use the visudo command to safely modify the sudoers configuration and add the user to the sudo group for administrative access.
+
+Ticket 12-- Using Vi to Write Simple Text
+Practice using the Vi text editor to write simple sentences or notes in a text file. Learn basic Vi commands for navigation, editing, and saving text files, such as i for insert mode, :wq for save and exit, and :q! for exit without saving.
+
+Ticket 13-- Checking System Information
+Use commands like uname,  and hostnamectl to display system information such as distribution name and release, and system hostname.
+
+Ticket 14-- Listing Files and Directories
+Use commands like ls, ls -l, and ls -a to list files and directories in the current working directory. Explore options for displaying detailed file information, including permissions, ownership, and hidden files.
+
+Ticket 15-- Creating and Deleting Files
+Create new text files using commands like touch or echo, and delete files using the rm command. Practice creating and removing files to manage your file system effectively.
+
+Ticket 16-- Navigating the Filesystem
+Use commands like cd, pwd, and ls to navigate the Linux filesystem. Learn how to change directories, display the current working directory, and list directory contents to explore the directory structure.
+
+Ticket 17-- Displaying File Content
+Use commands like cat, less, and head to display the contents of text files. Explore options for viewing file contents, such as scrolling through long files, displaying specific line ranges, or searching for text patterns.
+
+Ticket 18-- Copying and Moving Files
+Use commands like cp and mv to copy and move files and directories between locations on your Linux system. Practice copying files to create backups and moving files to organize your filesystem.
+
+Ticket 19-- Managing Permissions
+Use commands like chmod and chown to manage file and directory permissions and ownership on your Linux system. Practice changing file permissions to control access rights for users and groups and modifying file ownership to manage file security.
+
+Ticket 20-- Shutting Down Instance and Exiting MobaXterm
+To gracefully shut down the instance and end the MobaXterm session, execute the following command:
+sudo shutdown -h now
+This command will initiate an immediate shutdown of the instance, halting all processes and powering off the virtual machine in a safe manner. After executing this command, ensure to close the MobaXterm session to complete the process.
+
+
+These additional tasks should provide further opportunities for practice and skill development in each respective area. Let me know if you need further assistance or clarification on any of these tasks, as a team.
+
+~Abi Landmark Technologies
+
+
+
+
+
