@@ -15,3 +15,4 @@ a couple of untracked files in this branch
 make untracked files comparatively visible
 analysing changes
 inspecting commit IDs
+verifying log files
