@@ -13,3 +13,5 @@ devops takes a great deal of patience and persevearance
 devops can be quite tricky
 a couple of untracked files in this branch
 make untracked files comparatively visible
+analysing changes
+inspecting commit IDs
