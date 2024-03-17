@@ -1,0 +1,177 @@
+APACHE TOMCAT
+Introduction
+Tomcat or Apache Tomcat is a light weight, open source web container used to deploy and
+run java-based web applications. It is developed by Apache Software Foundation (ASF).
+What is Webserver?
+A Web server is a program that uses HTTP (Hypertext Transfer Protocol) protocol to serves 
+web content (HTML and static content) to users.
+Examples
+Apache HTTP server
+Nginx (pronounced engine X)
+IBM HTTP server (IHS)
+Oracle iplanet web server
+Internet Information Server (IIS)
+What is an Application Server?
+An application server is a container upon which you can build and expose business logic 
+and processes to client applications through various protocols including HTTP in a n-tier
+architecture.
+Examples
+Apache Tomcat --Apache
+JBoss/WildFly - RedHat
+WebLogic - Oracle
+WebSphere Application Server - IBM
+WebSphere Liberty Profile - IBM
+Galssfish
+Tomcat installation
+The Apache Tomcat software is downloadable as a zip file which can be extracted and 
+installed as follows
+Windows
+Step 1: Create the folder called Apache in any directory and Unzip apache software into 
+that folder.
+Step 2: Open the command prompt and execute the below commands.
+>cd C:\DevOps\Apache\apache-tomcat-7.0.79\bin
+>startup.bat (OR) > catalina.bat start ---> Starting the Tomcat server.
+MAC/Linux:
+sh startup.sh (OR) sh catalina.sh start ---> Starting the Tomcat server.
+Once you execute the startup.bat, you will see below screens.
+Tomcat server is started successfully.
+Use the below URL and open in browser.
+http://localhost:8080
+Note: Tomcat by default will run in 8080 port number.
+---------------------------------------------------------------------------------------------------------------------
+Tomcat Directory Structure
+Tomcat installation provides these directories:
+bin: for Tomcat's binaries and startup scripts.
+conf: global configuration applicable to all the webapps. The default installation provides:
+One Policy File: catalina.policy for specifying security policy.
+Two Properties Files: catalina.properties and logging.properties,
+Four Configuration XML Files: server.xml (Tomcat main configuration file), web.xml
+(global web application deployment descriptors), context.xml (global Tomcat-specific
+configuration options) and tomcat-users.xml (a database of user, password and role for
+authentication and access control).
+The conf also contain a sub-directory for each engine, e.g., Catalina, which in turn contains 
+a sub-sub-directory for each of its hosts, e.g., localhost. You can place the host-specific 
+context information (similar to context.xml, but named as webapp.xml for each webapp 
+under the host).
+lib: Keeps the JAR-file that are available to all webapps. The default installation include 
+servletapi.jar (Servlet), jasper.jar (JSP) and jasper-el.jar (EL). You may also keep the JAR 
+files of external package here, such as MySQL JDBC driver (mysql-connector-java-5.1.{xx}-
+bin.jar)and JSTL (jstl.jar and standard.jar).
+logs: contains the engine logfile Catalina.{yyyy-mm-dd}.log, host logfile localhost.{yyyymmdd}. log, and other application logfiles such as manger and host-manager. The access 
+log (created by the AccessLogValve) is also kept here.
+webapps: the default appBase - web applications base directory of the host localhost.
+work: contains the translated servlet source files and classes of JSP/JSF. Organized in 
+hierarchy of engine name (Catalina), host name (localhost), webapp name, followed by the 
+Java classes package structure.
+temp: temporary files.
+How to change the port number in Tomcat?
+Go to the conf directory and open the server.xml and you will find below lines.
+<Connector port="8080" protocol="HTTP/1.1"
+connectionTimeout="20000"
+redirectPort="8443" />
+Replace the 8080 with any port number.
+---------------------------------------------------------------------------------------------------------------------
+How to stop the tomcat server?
+>cd APACHE_HOME Dir\bin
+>shutdown.bat (OR) > catalina.bat stop
+MAC/Linux:
+shutdown.sh (OR) > catalina.sh stop
+---------------------------------------------------------------------------------------------------------------------
+Install Tomcat in Linux
+cd /opt
+wget http://apache.spinellicreations.com/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat9.0.16.zip
+unzip apache-tomcat-9.0.55.zip
+cd /opt/apache-tomcat-9.0.55/bin
+chmod u+x *.sh
+#sh /opt/apache-tomcat-9.0.55/bin/startup.sh
+ln -s /opt/apache-tomcat-9.0.55/bin/startup.sh /usr/bin/startTomcat
+ln -s /opt/apache-tomcat-9.0.55/bin/shutdown.sh /usr/bin/stopTomcat
+startTomcat 
+Admin Console
+Tomcat provides a web based administration console which can be started via the following 
+link: http://localhost:8080/manager/html
+Tomcat manager is the web application, using this WEB manage applications running
+on tomcat. By default, access is restricted to this application.
+- Remove the restriction to manager application
+Open the /webapps/manager/META-INF/context.xml file and
+remove the <Value> .......</Value> from this file.
+- Add user to access tomcat manager application as follows.
+Open the tomcat-users.xml file which is available in conf directory.
+# The tomcat-users.xml file should look something like this:
+<tomcat-users>
+<!--
+<role rolename="tomcat"/>
+<role rolename="role1"/>
+<user username="tomcat" password="tomcat" roles="tomcat" />
+<user username="role1" password="tomcat" roles="role1" />
+<user username="both" password="tomcat" roles="tomcat,role1" />
+-->
+<!-- Note: While copy pate above line you have to remove double quotes and type 
+manually. -->
+<user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+<user username="simon" password="password" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+Server Status & Manager App
+To access the server status application and Manager app, tomcat 7 onwards below roles as
+introduced.
+manager-gui : allows access to the HTML GUI and the Server Status and Manager App
+pages
+admin-gui : allows access to the Host Manager page.
+If you provide add below line in tomcat-users.xml, we will get the access for below
+apps(Buttons)
+<user username="admin" password="passw0rd" roles="manager-gui"/>
+http://localhost:8083/manager/status
+http://localhost:8083/manager/html
+Host Manager
+To access the host manager application, tomcat 7 onwards below roles as introduced.
+admin-gui - allows access to the HTML GUI
+If you provide add below line in tomcat-users.xml, we will get the access for below
+apps(Buttons)
+<user username="admin" password="passw0rd" roles="admin-gui"/>
+http://localhost:8083/host-manager/html
+http://localhost:8083/host-manager/html
+---------------------------------------------------------------------------------------------------------------------
+Stop the server
+# ./shutdown.sh (OR) sh catalina.sh stop
+Deployment
+Deploying the application into Tomcat server is nothing but, keeping the war file in Tomcat’s
+webapps directly.
+---------------------------------------------------------------------------------------------------------------------
+Error 1
+Solution:
+If you see this error set the class path for Java.
+Solution:
+<Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+By default SSLEngine=”on” , make it to off, like below.
+<Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="off" />
+---------------------------------------------------------------------------------------------------------------------
+Tomcat Performance Tuning
+How to increase the Heap size in Tomcat?
+Ans)
+1)Go to <ApacheTomcatHomeDir>/bin
+cd /opt/apache-tomcat-9.0.21/bin
+2) Create a file with name setenv.sh, add velow lines.
+vi setenv.sh
+export CATALINA_OPTS="$CATALINA_OPTS -Xms512m"
+export CATALINA_OPTS="$CATALINA_OPTS -Xmx8192m"
+export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=256m"
+Note: The default -Xmx value is 64MB.
+3) Give the execute permissions.
+chmod u+x setenv.sh
+4) start Tomcat server. Once you started check in console.out log file, you will see below 
+lines as
+output.
+04-Jul-2019 12:12:03.526 INFO [main] 
+org.apache.catalina.startup.VersionLoggerListener.log
+Command line argument: -Xms512m
+04-Jul-2019 12:12:03.526 INFO [main] 
+org.apache.catalina.startup.VersionLoggerListener.log
+Command line argument: -Xmx8192m
+04-Jul-2019 12:12:03.526 INFO [main] 
+org.apache.catalina.startup.VersionLoggerListener.log
+Command line argument: -XX:MaxPermSize=256m
+References
+http://tomcat.apache.org/tomcat-7.0-doc/setup.html ---> Installing Apache Tomcat
+http://tomcat.apache.org/tomcat-7.0-doc/windows-service-howto.html --->Windows service
+HOW-TO
+https://wiki.apache.org/tomcat/TomcatVersions
