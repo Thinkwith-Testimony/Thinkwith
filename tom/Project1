@@ -3,9 +3,6 @@ DATE -- 11-03-2024
 TOPICS -- Bash shell scripting , Git and Github ,  Maven,NEXUS ,Tomcat , webservers - Nginx/HTTP  , SonarQube ,SonarCloud  , Jenkins , Github actions, A-DEVOPS 
 All tickets should be addressed in the order of priority based on needs. Courses that have not yet been covered will be added to this list and are advised to be addressed as they are covered by the professor.
 
-
-
-
 Ticket 01 - Bash Shell Scripting
 Task: Create a Hello World Script
 Write a simple Bash script that prints "Hello, World!" to the terminal when executed.
@@ -56,7 +53,6 @@ Log in to Nexus using the default credentials (admin/admin123).
 In the Nexus dashboard, navigate to 'Repositories' and click 'Create Repository.'
 Choose the 'Maven (hosted)' type, set a Repository ID, and configure additional settings such as storage.
 
-
 Ticket 04 - Tomcat:
 Task: Install Apache Tomcat
 Download and install Apache Tomcat on your local machine.
@@ -94,7 +90,6 @@ Expected result: If the configuration is valid, it should display: nginx: config
 ------5C) HTTPS Setup:
 Task: Enable HTTPS for Website Security
 Implement HTTPS to encrypt data transmission, ensuring secure communication between users and the website.
-
 
 Ticket 06 - SonarQube:
 Task: Install SonarQube
@@ -137,8 +132,6 @@ C. Verify Jenkins version.
 Execute the following command:
 java -jar jenkins.war --version
 Expected result: It should display the Jenkins version.
-
-
 
 Ticket 09 - GitHub Actions:
 Task: Enable GitHub Actions
@@ -258,7 +251,6 @@ Ticket 20-- Shutting Down Instance and Exiting MobaXterm
 To gracefully shut down the instance and end the MobaXterm session, execute the following command:
 sudo shutdown -h now
 This command will initiate an immediate shutdown of the instance, halting all processes and powering off the virtual machine in a safe manner. After executing this command, ensure to close the MobaXterm session to complete the process.
-
 
 These additional tasks should provide further opportunities for practice and skill development in each respective area. Let me know if you need further assistance or clarification on any of these tasks, as a team.
 
