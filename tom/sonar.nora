@@ -1,0 +1,107 @@
+1) Are packages created if unit testing fail?
+	What would happen if it passes?
+2) IQ: Tell us about a project/change you introduce in your environment 
+    Tell us about a project which you are proud of.
+Thank you everyone, when I joined a team in my prior role about 5 years ago, I realized here that the software development process was just to write code with developers, performing unit testing via maven, and deploying these packages. We realized that there was a lot of rollback and customers were not happy with the newer versions. That became a serious problem and we were asked to search for a solution as we were loosing a lot of revenue. During my search I realized that what we were lacking was codequality and they were server code quality tool. I studied them and I realized that sonarcube was one of the best code quality tool and that is how I recommended sonarcube to be used. Initially developers were not happy with it because sonarcube always detected errors. But eventally today our developers are very happy because customers are no longer complaining, we are making more profit, and gotten a lot of benefits. 
+
+In one of our retrospect meeting 
+    Answer = I introduce sonarqube for code quality in my environment. There were a lot of scenarios where various versions where roll back and this was due to the lack of the code quality tool. They utilized maven but we know it performs just 40% of code analysis and does not do a line to line analysis like sonarqube. The company lost a lot of money due to this rollback and when I introduced 
+
+ rollout  = version1 ----> version2 ---> version3
+          samsung: S21 --> S22 ---> S23 --->S24   
+ rollback = version3 ---> version2--->version1  
+ tesla --> model5/5m*$120k --recall ---> model4 
+           $600,000,000,000  
+
+3)What would sonarqube do?
+	Code Quality Benchmarks:
+  Landmark Software Solution = LSS  :  
+  1. code coverage   = 80% plus 
+  2. code smells     = less than 5  
+  3. bugs            = 0   
+  4. vulnerabilities = 0  
+  5. portability     = high   
+  6. duplicate lines = less than 5%  [ functions ]  
+          src   utc   duplicates  cc      result  deployment   :
+sprint1    20k  19k     5%        95%     fail     no  
+sprint2    50k  49k     3%        98%     pass     yes
+sprint3    80k  70k     6%        87.5%   fail     no   
+
+
+4) How are the report done/compared in code quality analysis? comparing actual results against the benchmark/standards is analysis. Below is what is included in that report
+	1. How many unit test cases were run?
+           How many test cases should have been run?   
+        2. Is our code readable with ease? 
+           ----> code smells / bad code  
+        3. Is our code portable [ environment independent / dependent ]?
+           -- if not code smells / hard coding 
+        4. Are there vulnerabilities in the code ?
+           ---> if they are then --- 
+          password -- any 4 characters [abcd] this is not a good code, so update
+          tdbank.com =    
+          username = legahsimon2020  
+5) Benchmark/standards for a quality Software/application:
+	1. Code coverage should be greater than 85%  
+	2. Dublicate lines should be less than 5% 
+	3. There should be no vulnerabilities in the code [pw=1234] 
+	4. Code smells should be less than 5  
+
+6) What is Sonarqube comprised of? 
+	Sonarqube Scanner:
+	Sonarquber server: made up of 4 components (compute engine,database - h2 database, search engine - elasticsearch es, web-server)
+
+7 What is a database? A database is either structured or unstructured. 
+
+    1) Structured Database: 
+	mySQL = RDS   = Relational databases. generally data is structured and      	stored in tables [rows and columns] format
+ 	Structured Database includes SQL = structured query langaguage include    	Oracle, mySQL  - OS. 	PostgreSql  - OS, MSSQL (MicrosoftSQL) and DB2
+
+    2)noSQL = nonRDS = non Relational databases
+    user1 = name/tel/address  
+    user2 = name/ssn/date of birth  
+    user3 = place of birth / profession / tel
+    generally data is unstructured and stored in JSON format 
+    Examples:MongoDB, Cassandra, CouchDB,Redis, Riak, HBase, CouchBase, 
+
+8) What is sonarqube default port? 9000. How do you access sonarqube 52.23.213.140:900009
+
+9) What is SHD? What is the sonarqube home director? This is where you extract the software /opt/sonarqube
+
+10) What are the different versions of sonarqube? Free version (Java,JavaScript,
+  C#, TypeScript,Kotlin,Ruby, Go, Scala, Flex, Python, PHP, HTML, CSS, XML and 
+  VB.NET)
+, enterprise version, and datacenter version.
+
+11) Look at the ports below: 
+	Servers/Computers have 65,536 addresses called ports 
+	Servers/Computers have 65,536 ports = range (0,1,2,...,65,535) 
+  http port = 80    
+  ssh port  = 22 
+  tomcat port = 8080   
+  sonarqube port = 9000 
+
+12) SonarQube Reports depends on:
+  1. Rules: There are 535 rules that can be used for java, so it is available alreay 
+  2. Quality profile: we can create a quality profile. A default quality profile is Sonar way
+  3. Quality Gates : The default quality gate is Sonar way. Conditions (only project measures are checked against thresholds. Directories and files are ignored.
+	Metric
+Operator  Error
+Coverage on New Code  is less than  80.0%
+Duplicated Lines on New Code  is greater than 3.0%
+Maintainability Rating on New Code  is worse than A
+Reliability Rating on New Code  is worse than A
+Security Rating on New Code is worse than A
+
+Quality Profiles are collections of rules to apply during CodeQuality analysis.
+For each language there is a default Quality profile 
+
+SonarQube  :
+  create a server and install the sonarqube Software  
+  It is an IaaS [ infrastructure as a service ] solution 
+SonarCloud = SaaS  :  
+  no server is required. 
+  it is SaaS[software as a service] solution  
+   https://docs.sonarcloud.io/  
+IAAS (MAVEN, TOMCAT, GIT, SONARQUBE)
+SAAS (GITHUB, SONARCLOUD)
+
