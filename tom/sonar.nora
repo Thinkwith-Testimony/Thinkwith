@@ -1,3 +1,7 @@
+#One speaks of experience:
+2. We use SonarQube to perform static code quality analysis for    
+   our projects  
+
 1) Are packages created if unit testing fail?
 	What would happen if it passes?
 2) IQ: Tell us about a project/change you introduce in your environment 
@@ -77,7 +81,9 @@ sprint3    80k  70k     6%        87.5%   fail     no
 	Servers/Computers have 65,536 ports = range (0,1,2,...,65,535) 
   http port = 80    
   ssh port  = 22 
-  tomcat port = 8080   
+  tomcat port = 8080
+  nexus port = 8081
+  Jenkins port = 8080
   sonarqube port = 9000 
 
 12) SonarQube Reports depends on:
@@ -105,3 +111,27 @@ SonarCloud = SaaS  :
 IAAS (MAVEN, TOMCAT, GIT, SONARQUBE)
 SAAS (GITHUB, SONARCLOUD)
 
+SDLC =:
+  develop, build and deploy
+We use sonarqube to check for code quality analysis. We use sonarqube to determine if this software was written as expected. SonarQube comes with a scanner and a server.
+SonarQube Scanner and
+SonarQube server:
+   Compute engine
+   elasticsearch
+   Database
+   web-server = serverIP:portNumber[9000] = userName/Password
+              = token
+
+1) What do we use to define our standards for quality software?
+	A) Rules
+	B) Quality Profiles
+	C) Quality Gate:
+		Conditions are determined together as a team.
+	   Quality GATE:
+             Conditions
+              1. Code coverage     > 85%
+              2. Duplicated lines  < 4%
+              3. vulnerabilities   < 1
+              4. code smells       < 5
+              5. bugs              = 0
+              6. Security hotspots = 0
