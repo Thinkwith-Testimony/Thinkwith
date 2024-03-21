@@ -1,1 +1,69 @@
+Task1
+#!/bin/bash
+#This Script prints "Hello, World!" to the terminal when executed.
+echo "Hello, World!"
+
+
+
+Task 2
+#!/bin/bash
+# This Script caculates the sum of 2 numbers
+echo "Enter the first number:"
+read num1
+
+# Prompt the user to enter the second number
+echo "Enter the second number:"
+read num2
+
+# Calculate the sum of the two numbers
+sum=$((num1 + num2))
+
+# Display the result
+echo "The sum of $num1 and $num2 is: $sum"
+
+
+
+Task 3
+#!/bin/bash
+
+# This script creates a new directory, moves all text files from the current directory into it, and then lists the contents of the directory
+# First let's create 3 .txt files called class1.txt, book1.txt and test1.txt
+ touch class1.txt book1.txt test1.txt
+# Create a new directory called "text_files"
+mkdir Class35Team1
+
+# Move all text files from the current directory to the "text_files" directory
+mv *.txt Class35Team1
+
+# List the contents of the "text_files" directory
+ls Class35Team1
+
+
+Task 4
+#!/bin/bash
+
+# For this task, let's imagine we have 2 directories: Dir1, Dir2 and 2 files: File1, File2 that we want to backup
+backup_files="/path/to/Dir1 /path/to/Dir2 /path/to/File1 /path/to/File2"
+
+# Now let's set up the Remote server details
+remote_user="username"
+remote_ip="remote_server_ip"
+remote_path="/path/on/remote/server"
+
+# Now let's create a compressed archive of the specified directories and files using the tar command.
+
+# Create a timestamp for the backup file
+timestamp=$(date +"%Y%m%d_%H%M%S")
+backup_file="backup_$timestamp.tar.gz"
+
+# Create the compressed archive
+tar -czf $backup_file $backup_files
+
+# Let's transfer the compressed archive to the remote server using SCP. You can use SSH keys for authentication to avoid entering passwords.
+
+scp $backup_file $remote_user@$remote_ip:$remote_path
+
+#Finally, let's clean up by removing the local compressed archive after transferring it to the remote server.
+
+rm $backup_file
 
